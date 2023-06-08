@@ -1,0 +1,67 @@
+syntax="proto3";
+option java_package="com.demp.grpcjdbc";
+
+service entity{
+	rpc createStudent(CreateStudentRequest) returns (APIResponse);
+	rpc readStudent(ReadStudentRequest) returns (APIResponse);
+	rpc updateStudent(StudentRequest) returns (APIResponse);
+	rpc deleteStudent(DeleteStudentRequest) returns (APIResponse);
+	rpc createEmployee(CreateEmployeeRequest) returns (APIResponse);
+	rpc readEmployee(ReadEmployeeRequest) returns (APIResponse);
+	rpc updateEmployee(EmployeeRequest) returns (APIResponse);
+	rpc deleteEmployee(DeleteEmployeeRequest) returns (APIResponse);
+}
+	
+message CreateStudentRequest{
+	string studentName =1;
+	string studentPhone =2;
+	string studentCity =3;
+}
+
+message ReadStudentRequest{}
+
+message StudentRequest{
+	int32 studentId = 1;
+	string studentName =2;
+	string studentPhone =3;
+	string studentCity =4;
+}
+
+message StudentList{
+	repeated StudentRequest student = 1;
+}
+
+message DeleteStudentRequest{
+	int32 studentId = 1;
+}
+
+
+message CreateEmployeeRequest{
+	string email=1;
+	string firstName=2;
+	string lastName=3;
+}
+
+message ReadEmployeeRequest{}
+
+message EmployeeRequest{
+	int32 employeeId = 1;
+	string email =2;
+	string firstName =3;
+	string lastName =4;
+}
+
+message EmployeeList{
+	repeated EmployeeRequest employee = 1;
+}
+
+message DeleteEmployeeRequest{
+	int32 employeeId=1;
+}
+
+message APIResponse{
+	string responseMessage =1;
+	int32 responseCode = 2;
+}
+
+	
