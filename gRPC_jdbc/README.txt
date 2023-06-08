@@ -1,1 +1,0 @@
-This is the HEART of the project. This is the 1st project that you need to run. Later you can chose a simple tool like BLOOM RPC to call your api too. But you need to run the REST API project "REST_CLIENT" for the 4 layer architecture. you can also test ur API calls by HARDCODED gRPC client project  "Hardcoded_gRPC_client"
